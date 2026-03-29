@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.gui.overlay.ForgeGui;
+import org.joml.Vector2d;
 
 public class ARRect2D extends ARElement2D{
 
@@ -42,7 +43,11 @@ public class ARRect2D extends ARElement2D{
     @Override
     @OnlyIn(Dist.CLIENT)
     protected void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
+        Vector2d anhor = getAnchoredPosition(guiGraphics);
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().translate(anhor.x, anhor.y,0);
         guiGraphics.fill(x1,y1,x2,y2,color);
+        guiGraphics.pose().popPose();
     }
 
     @Override

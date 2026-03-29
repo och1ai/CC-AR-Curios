@@ -1,6 +1,7 @@
 package com.kito1z.cc_ar.client.elements;
 
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
@@ -59,9 +60,9 @@ public class ARLine3D extends ARElement3D{
         var camPos = camera.getPosition();
         Vector3d delta = new Vector3d(start.x-camPos.x,start.y-camPos.y,start.z-camPos.z);
         stack.translate(delta.x,delta.y,delta.z);
-        buffer.vertex(stack.last().pose(), start.x, start.y, start.z).color(color).normal(stack.last().normal(),1f,0f,0f).endVertex();
-        buffer.vertex(stack.last().pose(),end.x, end.y, end.z).color(color).normal(stack.last().normal(),1f,0f,0f).endVertex();
-        buffer.vertex(stack.last().pose(), start.x, start.y, start.z).color(color).normal(stack.last().normal(),0f,0f,-1f).endVertex();
-        buffer.vertex(stack.last().pose(),end.x, end.y, end.z).color(color).normal(stack.last().normal(),0f,0f,-1f).endVertex();
+        buffer.vertex(stack.last().pose(), 0, 0, 0).color(color).normal(stack.last().normal(),1f,0f,0f).endVertex();
+        buffer.vertex(stack.last().pose(),end.x-start.x, end.y-start.y, end.z-start.z).color(color).normal(stack.last().normal(),1f,0f,0f).endVertex();
+        buffer.vertex(stack.last().pose(), end.x-start.x, end.y-start.y, end.z-start.z).color(color).normal(stack.last().normal(),0f,0f,-1f).endVertex();
+        buffer.vertex(stack.last().pose(),0, 0, 0).color(color).normal(stack.last().normal(),0f,0f,-1f).endVertex();
     }
 }

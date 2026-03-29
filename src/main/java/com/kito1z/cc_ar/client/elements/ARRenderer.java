@@ -47,7 +47,7 @@ public class ARRenderer {
 
     public static void renderLevel(RenderLevelStageEvent event){
         if(!isArAvailable) return;
-        if (!(event.getStage()== RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS)) return;
+        if (!(event.getStage()== RenderLevelStageEvent.Stage.AFTER_PARTICLES)) return;
         MultiBufferSource.BufferSource source = Minecraft.getInstance().renderBuffers().bufferSource();
         elements.forEach((id,e)->{
             if(e instanceof ARElement3D element3D) {

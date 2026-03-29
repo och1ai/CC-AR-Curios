@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.gui.overlay.ForgeGui;
+import org.joml.Vector2d;
 
 public class ARText2D extends ARElement2D{
 
@@ -34,8 +35,12 @@ public class ARText2D extends ARElement2D{
     @Override
     @OnlyIn(Dist.CLIENT)
     protected void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
-        if(centered) guiGraphics.drawCenteredString(Minecraft.getInstance().font,text,x,y-Minecraft.getInstance().font.lineHeight/2,color);
+        Vector2d anhor = getAnchoredPosition(guiGraphics);
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().translate(anhor.x, anhor.y,0);
+        if(centered) guiGraphics.drawCenteredString(Minecraft.getInstance().font,text,x,y,color);
         else guiGraphics.drawString(Minecraft.getInstance().font,text,x,y,color);
+        guiGraphics.pose().popPose();
     }
 
     @Override

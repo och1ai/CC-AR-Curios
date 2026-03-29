@@ -61,12 +61,8 @@ public class ARController extends BlockEntity implements IPeripheralHolder {
         }
 
         @LuaFunction
-        public void drawHorizontalLine2D(String id, int color, int x, int y, int targetX){
-            validateContainer().put(new ArLine2D(id,color, ArLine2D.LineType.HORIZONTAL,x,y,targetX));
-        }
-        @LuaFunction
-        public void drawVerticalLine2D(String id, int color, int x, int y, int targetY){
-            validateContainer().put(new ArLine2D(id,color, ArLine2D.LineType.VERTICAL,x,y,targetY));
+        public void drawLine2D(String id, int color, double thickness, int x, int y, int bx, int by){
+            validateContainer().put(new ArLine2D(id,color,x,y,bx,by,(float) thickness));
         }
 
         @LuaFunction
@@ -115,9 +111,20 @@ public class ARController extends BlockEntity implements IPeripheralHolder {
         }
 
         @LuaFunction
+        public void setAnchor(String element, double x, double y){
+            ARElement e = validateContainer().get(element);
+            if(e instanceof ArLine2D e2d){
+                e2d.setAnchor(x,y);
+                return;
+            }
+            throw new RuntimeException("Element is not 2D");
+        }
+
+        @LuaFunction
         public void update(){
             ARContainerIdentifier identifier = new ARContainerIdentifier(instance.getBlockPos(), instance.getLevel());
-            ElementsContainer container = (ElementsContainer) instance.arContainer.clone();
+            ElementsContainer container = new ElementsContainer();
+            container.putAll(instance.arContainer);
             container.setVersion(System.currentTimeMillis());
             ElementsServer.ELEMENTS.put(identifier,container);
         }

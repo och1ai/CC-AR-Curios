@@ -9,6 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.gui.overlay.ForgeGui;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.joml.Vector2d;
 
 public class ARItemIcon2D extends ARElement2D{
 
@@ -52,7 +53,11 @@ public class ARItemIcon2D extends ARElement2D{
     @OnlyIn(Dist.CLIENT)
     protected void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         if(stack==null) return;
+        Vector2d anhor = getAnchoredPosition(guiGraphics);
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().translate(anhor.x, anhor.y,0);
         guiGraphics.renderFakeItem(stack, x, y);
+        guiGraphics.pose().popPose();
     }
 
     @Override

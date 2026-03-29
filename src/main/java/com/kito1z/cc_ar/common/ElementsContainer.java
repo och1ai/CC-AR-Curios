@@ -3,9 +3,9 @@ package com.kito1z.cc_ar.common;
 import com.kito1z.cc_ar.client.elements.ARElement;
 import net.minecraft.network.FriendlyByteBuf;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class ElementsContainer extends HashMap<String, ARElement> {
+public class ElementsContainer extends ConcurrentHashMap<String, ARElement> {
     private long version = 0;
 
     public String label = "";

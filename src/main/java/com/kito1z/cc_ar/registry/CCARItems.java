@@ -12,6 +12,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class CCARItems {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, CCARMod.MODID);
 
-    public static final RegistryObject<ARGoggles> AR_GOGGLES = REGISTER.register("ar_goggles",()-> new ARGoggles(new ARGogglesArmorMaterial(), ArmorItem.Type.HELMET,new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<BlockItem> AR_CONTROLLER = REGISTER.register("ar_controller",()-> new BlockItem(CCARBlocks.AR_CONTROLLER.get(),new Item.Properties()));
+    public static final RegistryObject<ARGoggles> AR_GOGGLES = REGISTER.register("ar_goggles",
+            () -> new ARGoggles(new ARGogglesArmorMaterial(), ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<BlockItem> AR_CONTROLLER = REGISTER.register("ar_controller",
+            () -> new BlockItem(CCARBlocks.AR_CONTROLLER.get(), new Item.Properties()));
 }

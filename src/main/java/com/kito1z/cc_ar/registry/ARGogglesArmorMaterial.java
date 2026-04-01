@@ -6,17 +6,16 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
 
 public class ARGogglesArmorMaterial implements ArmorMaterial {
     @Override
-    public int getDurabilityForType(ArmorItem.Type p_266807_) {
-        return 100;
+    public int getDurabilityForType(ArmorItem.Type type) {
+        return 0;
     }
 
     @Override
-    public int getDefenseForType(ArmorItem.Type p_267168_) {
-        return 1;
+    public int getDefenseForType(ArmorItem.Type type) {
+        return 0;
     }
 
     @Override
@@ -31,21 +30,21 @@ public class ARGogglesArmorMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.of(Tags.Items.GLASS);
+        return Ingredient.EMPTY;
     }
 
     @Override
     public String getName() {
-        return CCARMod.MODID+":ar_goggles";
+        return CCARMod.MODID + ":ar_goggles";
     }
 
     @Override
     public float getToughness() {
-        return 0;
+        return 0f;
     }
 
     @Override
     public float getKnockbackResistance() {
-        return 0;
+        return 0f;
     }
 }

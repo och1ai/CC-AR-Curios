@@ -2,5 +2,13 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "cc_ar:item/ar_goggles"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "cc_ar:linked": 1.0
+      },
+      "model": "cc_ar:item/ar_goggles_linked"
+    }
+  ]
 }

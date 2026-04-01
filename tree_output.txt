@@ -1,0 +1,96 @@
+.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── LICENSE
+├── README.md
+├── settings.gradle
+├── src
+│   └── main
+│       ├── java
+│       │   └── com
+│       │       └── kito1z
+│       │           └── cc_ar
+│       │               ├── blocks
+│       │               │   ├── ARControllerBlock.java
+│       │               │   └── blockentities
+│       │               │       └── ARController.java
+│       │               ├── CCARMod.java
+│       │               ├── client
+│       │               │   └── elements
+│       │               │       ├── ARElement2D.java
+│       │               │       ├── ARElement3D.java
+│       │               │       ├── ARElement.java
+│       │               │       ├── ARItemGhost3D.java
+│       │               │       ├── ARItemIcon2D.java
+│       │               │       ├── ArLine2D.java
+│       │               │       ├── ARLine3D.java
+│       │               │       ├── ARRect2D.java
+│       │               │       ├── ARRenderer.java
+│       │               │       ├── ARText2D.java
+│       │               │       └── ARText3D.java
+│       │               ├── common
+│       │               │   ├── ARContainerIdentifier.java
+│       │               │   ├── ARElementsReg.java
+│       │               │   ├── ElementsContainer.java
+│       │               │   ├── ElementsServer.java
+│       │               │   └── IARElementReg.java
+│       │               ├── Config.java
+│       │               ├── items
+│       │               │   └── ARGoggles.java
+│       │               ├── network
+│       │               │   ├── CCARNetwork.java
+│       │               │   └── RequestUpdatePacket.java
+│       │               └── registry
+│       │                   ├── ARElements.java
+│       │                   ├── ARGogglesArmorMaterial.java
+│       │                   ├── CCARBlockEntities.java
+│       │                   ├── CCARBlocks.java
+│       │                   ├── CCARItems.java
+│       │                   └── IPeripheralHolder.java
+│       └── resources
+│           ├── assets
+│           │   └── cc_ar
+│           │       ├── blockstates
+│           │       │   └── ar_controller.json
+│           │       ├── lang
+│           │       │   ├── en_us.json
+│           │       │   └── ru_ru.json
+│           │       ├── models
+│           │       │   ├── block
+│           │       │   │   └── ar_controller.json
+│           │       │   └── item
+│           │       │       ├── ar_controller.json
+│           │       │       └── ar_goggles.json
+│           │       └── textures
+│           │           ├── block
+│           │           │   └── ar_controller.png
+│           │           ├── item
+│           │           │   └── ar_goggles.png
+│           │           └── models
+│           │               └── armor
+│           │                   └── ar_goggles_layer_1.png
+│           ├── data
+│           │   ├── cc_ar
+│           │   │   ├── loot_tables
+│           │   │   │   └── blocks
+│           │   │   │       └── ar_controller.json
+│           │   │   └── recipes
+│           │   │       ├── ar_controller.json
+│           │   │       └── ar_goggles.json
+│           │   └── minecraft
+│           │       └── tags
+│           │           └── blocks
+│           │               └── mineable
+│           │                   └── pickaxe.json
+│           ├── META-INF
+│           │   └── mods.toml
+│           └── pack.mcmeta
+└── tree_output.txt
+
+40 directories, 54 files
